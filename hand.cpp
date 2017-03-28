@@ -13,3 +13,7 @@ hand::hand():amount{0}{}
 hand::~hand(){
     realhand.clear();
 }
+
+bool hand::checkfull(){
+    return amount >= maxhandcard;
+}

@@ -23,8 +23,10 @@ public:
     virtual ~minion();
     virtual void changehealth(string how, int much);
     virtual void changeattack(string how, int much);
+    virtual void hit(minion &other);
     virtual void hit();
     virtual void useability();
 };
 
 #endif /* minion_hpp */
+//lxdxlxd

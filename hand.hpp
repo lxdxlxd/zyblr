@@ -10,16 +10,19 @@
 #define hand_hpp
 
 #include <iostream>
-#include "Board.hpp"
+#include <vector>
+using namespace std;
 
 class card;
 
-class hand: public Board {
+class hand{
+    const int maxhandcard = 5;
     int amount;
     vector<card> realhand;
 public:
     hand();
     ~hand();
+    bool checkfull();
 };
 
 #endif /* hand_hpp */
