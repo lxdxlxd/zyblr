@@ -15,6 +15,8 @@ public:
         string getname();
         int getmagic();
         int gethealth();
+        void changehealth(string how, int much);
+        void changemagic(string how, int much);
 };
 
 
