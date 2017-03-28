@@ -6,7 +6,7 @@
 //  Copyright © 2017 刘然. All rights reserved.
 //
 
-#include "Battlefield.h"
+#include "Battlefield.hpp"
 
 Battlefield::Battlefield():amount{0}{}
 
