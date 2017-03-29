@@ -7,8 +7,9 @@
 //
 
 #include "minion.hpp"
+#include "player.hpp"
 
-minion::minion() : name{""}, cost{0}, health{0}, attack{0}, action{0}{}
+minion::minion() : name{""}, cost{0}, defence{0}, attack{0}, action{0}{}
 
 minion::~minion(){}
 
@@ -20,13 +21,20 @@ void minion::changeattack(string how, int much){
     }
 }
 
-void minion::changehealth(string how, int much){
+void minion::changedefence(string how, int much){
     if (how == "plus"){
-        health += much;
+        defence += much;
     } else {
-        health -= much;
+        defence -= much;
     }
 }
-void minion::hit(){}
-void minion::useability(){}
+
+void minion::hit(minion &other){
+    other.being_hit(attack);
+    changedefence("minus", other.attack);
+}
+
+void minion::being_hit(int otherattack){
+    changedefence("minus", otherattack);
+}
 

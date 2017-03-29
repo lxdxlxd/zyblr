@@ -12,21 +12,22 @@
 #include <iostream>
 #include "card.hpp"
 
+class player;
 class minion: public card{
     int action;
-    int health;
+    int defence;
     int attack;
     int cost;
     string name;
 public:
     minion();
     virtual ~minion();
-    virtual void changehealth(string how, int much);
+    virtual void changedefence(string how, int much);
     virtual void changeattack(string how, int much);
     virtual void hit(minion &other);
-    virtual void hit();
-    virtual void useability();
+    virtual void hit(player &other);
+    virtual void being_hit (int otherattack);
 };
 
 #endif /* minion_hpp */
-//lxdxlxd
+
